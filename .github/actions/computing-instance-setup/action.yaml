@@ -1,0 +1,11 @@
+name: _computing-instance-setup
+description: Computing Instance Setup (Ubuntu)
+
+runs:
+  using: composite
+  steps:
+    - name: os package setup
+      working-directory: instance
+      run: |
+        ansible-playbook -i inventory/inventory.yaml playbooks/os_package_setup_playbook.yaml
+      shell: sh

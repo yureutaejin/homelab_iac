@@ -14,3 +14,6 @@ jobs:
       - name: Template
         run: |
           echo "Hello, world!"
+
+      - name: Checkout
+        uses: actions/checkout@v4

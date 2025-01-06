@@ -1,0 +1,6 @@
+all:
+  children:
+    computingInstances:
+      hosts:
+        yureutae-server-2:
+        yureutae-server-3:
