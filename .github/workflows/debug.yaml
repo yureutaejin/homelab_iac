@@ -20,6 +20,7 @@ jobs:
       
       - name: Test - container template provisioning
         env: 
+          ANSIBLE_USER_COMPUTING_INSTANCES: ${{ secrets.ANSIBLE_USER_COMPUTING_INSTANCES }}
           ANSIBLE_SSH_PW_COMPUTING_INSTANCES: ${{ secrets.ANSIBLE_SSH_PW_COMPUTING_INSTANCES }}
           ANSIBLE_BECOME_PW_COMPUTING_INSTANCES: ${{ secrets.ANSIBLE_BECOME_PW_COMPUTING_INSTANCES }}
         uses: ./.github/actions/container_template

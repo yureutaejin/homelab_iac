@@ -1,10 +1,10 @@
 - name: copy container template dir
   copy:
     src: "{{ project_container_path }}/container_template/"
-    dest: ~/homelab_iac_provisioning/container_template/
+    dest: /home/{{ ansible_user }}/homelab_iac_provisioning/container_template/
 
 - name: run docker compose
-  shell: docker compose -f ~/homelab_iac_provisioning/container_template/docker-compose.yaml up -d
+  shell: docker compose -f /home/{{ ansible_user }}/homelab_iac_provisioning/container_template/docker-compose.yaml up -d
   args:
-    chdir: ~/homelab_iac_provisioning/container_template/
+    chdir: /home/{{ ansible_user }}/homelab_iac_provisioning/container_template/
   register: docker_compose_container_template_output
