@@ -1,5 +1,5 @@
 - name: Ensure configurations
-  hosts: computingNodes
+  hosts: computingInstances
   tasks:
     - name: debug become password
       debug:
@@ -13,10 +13,10 @@
   hosts: computingInstances
   become: true
   roles:
-    - role: os_ubuntu/basic_packages
+    - role: basic_packages
 
 - name: ubuntu docker
   hosts: computingInstances
   become: true
   roles:
-    - role: os_ubuntu/docker
+    - role: docker
