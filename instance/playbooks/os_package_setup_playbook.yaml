@@ -1,14 +1,3 @@
-- name: Ensure configurations
-  hosts: computingInstances
-  tasks:
-    - name: debug become password
-      debug:
-        msg: "{{ ansible_become_password }}"
-
-    - name: debug ssh password
-      debug:
-        msg: "{{ ansible_ssh_pass }}"
-
 - name: ubuntu basic packages
   hosts: computingInstances
   become: true

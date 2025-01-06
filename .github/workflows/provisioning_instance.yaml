@@ -1,0 +1,21 @@
+name: CI - Provisioning Instance
+
+run-name: Provisioning Instance - ${{ github.ref_name || github.ref}}
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  os_package_setup:
+    runs-on:
+      - master
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Computing Instance Setup
+        env: 
+          ANSIBLE_SSH_PW_COMPUTING_INSTANCES: ${{ secrets.ANSIBLE_SSH_PW_COMPUTING_INSTANCES }}
+          ANSIBLE_BECOME_PW_COMPUTING_INSTANCES: ${{ secrets.ANSIBLE_BECOME_PW_COMPUTING_INSTANCES }}
+        uses: ./.github/actions/computing-instance-setup

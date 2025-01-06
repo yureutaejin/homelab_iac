@@ -7,9 +7,5 @@ runs:
     - name: os package setup
       working-directory: instance
       run: |
-        echo "Running os package setup"
-        echo $ANSIBLE_BECOME_PW_COMPUTING_INSTANCES
-        echo $ANSIBLE_SSH_PW_COMPUTING_INSTANCES
-        echo "..."
         ansible-playbook -i inventory/inventory.yaml playbooks/os_package_setup_playbook.yaml
       shell: sh
