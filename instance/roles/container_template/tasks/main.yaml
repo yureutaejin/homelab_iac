@@ -1,0 +1,14 @@
+- name: copy container template dir
+  copy:
+    src: "{{ lookup('config', 'paths.project_container_path') }}/container_template/"
+    dest: /opt/container_template/
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 2775
+    recursive: yes
+
+- name: run docker compose
+  shell: docker-compose -f /opt/container_template/docker-compose.yaml up -d
+  args:
+    chdir: /opt/container_template/
+  register: docker_compose_container_template_output

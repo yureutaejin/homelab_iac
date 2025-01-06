@@ -5,4 +5,4 @@ services:
     ports:
       - "4040:80"
     volumes:
-      - '/opt/template_container_dir:/usr/share/nginx/html'
+      - '/opt/container_template/container_template_dir:/usr/share/nginx/html'
