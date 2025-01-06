@@ -1,0 +1,16 @@
+name: CI - Debug
+
+run-name: Debug - ${{ github.ref_name || github.ref}}
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  ci_debugger:
+    runs-on:
+      - master
+
+    steps:
+      - name: Template
+        run: |
+          echo "Hello, world!"
