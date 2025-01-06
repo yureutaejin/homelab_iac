@@ -3,9 +3,3 @@
   become: true
   roles:
     - role: basic_packages
-
-- name: ubuntu docker
-  hosts: computingInstances
-  become: true
-  roles:
-    - role: docker
