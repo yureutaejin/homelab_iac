@@ -1,0 +1,8 @@
+services:
+  web-server:
+    image: nginx:latest
+    container_name: web-server-nginx
+    ports:
+      - "4040:80"
+    volumes:
+      - '/opt/template_container_dir:/usr/share/nginx/html'
