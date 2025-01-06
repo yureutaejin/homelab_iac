@@ -1,0 +1,22 @@
+- name: Ensure configurations
+  hosts: computingNodes
+  tasks:
+    - name: debug become password
+      debug:
+        msg: "{{ ansible_become_password }}"
+
+    - name: debug ssh password
+      debug:
+        msg: "{{ ansible_ssh_pass }}"
+
+- name: ubuntu basic packages
+  hosts: computingNodes
+  become: true
+  roles:
+    - role: ubuntu_basic_packages
+
+- name: ubuntu docker
+  hosts: computingNodes
+  become: true
+  roles:
+    - role: ubuntu_docker

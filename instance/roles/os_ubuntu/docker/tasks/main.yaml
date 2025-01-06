@@ -1,0 +1,14 @@
+- name: check docker pre_installed
+  shell: docker --version
+  ignore_errors: true
+  register: docker_pre_installed
+
+- name: install docker
+  shell: |
+    curl -fsSL https://get.docker.com | sh
+  when: docker_pre_installed.rc != 0
+
+- name: check_docker_installation
+  shell: docker --version
+  register: docker_post_installed
+  when: docker_pre_installed.rc != 0
