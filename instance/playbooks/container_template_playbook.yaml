@@ -1,0 +1,5 @@
+- name: container template provisioning
+  hosts: computingInstances
+  become: true
+  roles:
+    - role: container_template
