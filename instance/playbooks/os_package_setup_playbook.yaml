@@ -10,13 +10,13 @@
         msg: "{{ ansible_ssh_pass }}"
 
 - name: ubuntu basic packages
-  hosts: computingNodes
+  hosts: computingInstances
   become: true
   roles:
-    - role: ubuntu_basic_packages
+    - role: os_ubuntu/basic_packages
 
 - name: ubuntu docker
-  hosts: computingNodes
+  hosts: computingInstances
   become: true
   roles:
-    - role: ubuntu_docker
+    - role: os_ubuntu/docker
