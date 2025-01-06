@@ -14,3 +14,12 @@ jobs:
       - name: Template
         run: |
           echo "Hello, world!"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Test - Computing Instance Setup
+        env: 
+          ANSIBLE_SSH_PW_COMPUTING_INSTANCES: ${{ secrets.ANSIBLE_SSH_PW_COMPUTING_INSTANCES }}
+          ANSIBLE_BECOME_PW_COMPUTING_INSTANCES: ${{ secrets.ANSIBLE_BECOME_PW_COMPUTING_INSTANCES }}
+        uses: ./.github/actions/computing-instance-setup
