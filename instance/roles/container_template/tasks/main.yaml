@@ -1,3 +1,7 @@
+- name: Debug ansible_user
+  debug:
+    var: ansible_user
+
 - name: copy container template dir
   copy:
     src: "{{ project_container_path }}/container_template/"
