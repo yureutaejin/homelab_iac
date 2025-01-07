@@ -1,0 +1,11 @@
+name: _container-template-provision
+description: Container Template Provision
+
+runs:
+  using: composite
+  steps:
+    - name: container template provisioning
+      working-directory: instance
+      run: |
+        ansible-playbook -i inventory/inventory.yaml playbooks/container_template_playbook.yaml
+      shell: sh

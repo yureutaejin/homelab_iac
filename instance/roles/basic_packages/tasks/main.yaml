@@ -17,3 +17,6 @@
   apt:
     name: git
     state: present
+
+- name: Install docker
+  include_tasks: install-docker.yaml
